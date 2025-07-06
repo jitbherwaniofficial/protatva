@@ -243,6 +243,7 @@ body {
     position: relative;
     /* scale: 0.05;
     transform-origin: 50% 5%; */
+    margin-top: 5vw;
 }
 
 .s4_gif {
@@ -252,7 +253,7 @@ body {
     /* left: 0; */
     z-index: 40;
     /* border: 1px solid white; */
-    padding-top: 3vw;
+    padding-top: 6vw;
 }
 
 .s4_gif video {
@@ -263,8 +264,8 @@ body {
 
 .extra {
     position: absolute;
-    top: 3.5%;
-    right: 2%;
+    top: 10%;
+    right: 4%;
     z-index: 50;
     width: 40%;
     display: flex;
@@ -290,6 +291,7 @@ body {
 .extra span {
     display: inline-flex;
     font-size: 5vw;
+    font-weight: 900;
     letter-spacing: 5px;
 }
 }
@@ -302,7 +304,7 @@ body {
     position: absolute;
     width: 100%;
     height: 37%;
-    bottom: 0;
+    bottom: -3%;
     display: flex;
     gap: 0.5rem;
     /* transition: all 6s linear; */

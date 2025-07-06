@@ -281,19 +281,19 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
         height: "60%",
         left:0,
         transformOrigin: "0% 5%",
-        objectFit: "contain",
+        objectFit: "cover",
     })
 
     gsap.to(".section_four .images_container", {
         scrollTrigger: {
             trigger: ".section_four",
             scroller: "body",
-            scrub: true,
-            start: "20% 40%",
-            end: "20% -20%",
+            scrub: 5,
+            start: "20% 60%",
+            end: "20% -30%",
             // markers:true,
         },
-        x:-3800,
+        x:-4500,
         ease: "power.out",
     })
 
@@ -559,7 +559,7 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
         height: "60%",
         left:0,
         transformOrigin: "0% 5%",
-        objectFit: "contain",
+        objectFit: "cover",
     })
 
     gsap.to(".section_four .images_container", {
