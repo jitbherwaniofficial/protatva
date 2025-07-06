@@ -1,7 +1,11 @@
 console.log("Hare Krishna");
 window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 0); // or gsap.to(window, {scrollTo: 0, duration: 0});
+
+  // Now initialize GSAP Scroll-related stuff
+  ScrollTrigger.refresh();
 });
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
