@@ -461,8 +461,9 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
             trigger: ".section_three",
             scroller: "body",
             scrub: 4,
-            start: "top 90%",
-            end: "50% 10%",
+            start: "20% 100%",
+            end: "25% 20%",
+            // markers:true,
         },
         delay: 3
     })
