@@ -255,6 +255,48 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
         ease: "power2.out",
     })
 
+    gsap.from(".section_four p span", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 3,
+            start: "20% 50%",
+            end: "20% 20%",
+            // markers:true,
+        },
+        y: 1000,
+        stagger: 0.2,
+    })
+
+    gsap.to(".s4_gif video", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 4,
+            start: "20% 50%",
+            end: "20% 20%",
+            // markers:true,
+        },
+        width: "50%",
+        height: "60%",
+        left:0,
+        transformOrigin: "0% 5%",
+        objectFit: "contain",
+    })
+
+    gsap.to(".section_four .images_container", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: true,
+            start: "20% 40%",
+            end: "20% -20%",
+            // markers:true,
+        },
+        x:-3800,
+        ease: "power.out",
+    })
+
 
 });
 
@@ -489,6 +531,48 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
     tl3.from(".growth", {
         left: -1500,
         ease: "power2.out",
+    })
+
+     gsap.from(".section_four p span", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 3,
+            start: "20% 60%",
+            end: "20% 30%",
+            // markers:true,
+        },
+        y: 1000,
+        stagger: 0.2,
+    })
+
+    gsap.to(".s4_gif video", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 4,
+            start: "20% 50%",
+            end: "20% 20%",
+            // markers:true,
+        },
+        width: "50%",
+        height: "60%",
+        left:0,
+        transformOrigin: "0% 5%",
+        objectFit: "contain",
+    })
+
+    gsap.to(".section_four .images_container", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 5,
+            start: "20% 40%",
+            end: "20% -20%",
+            // markers:true,
+        },
+        x:-3600,
+        ease: "power.out",
     })
 
 
