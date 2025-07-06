@@ -196,6 +196,7 @@ body {
 
 .section_three {
     position: relative;
+    /* border:1px solid red; */
 }
 
 .pure,
@@ -210,27 +211,27 @@ body {
 }
 
 .pure {
-    top: 0;
+    top: -6%;
     left: 0;
 }
 
 .nutrition {
-    top: 25%;
+    top: 19%;
     right: 0;
 }
 
 .for {
-    top: 50%;
+    top: 44%;
     left: 0;
 }
 
 .muscle {
-    top: 50%;
+    top: 44%;
     right: 0;
 }
 
 .growth {
-    top: 75%;
+    top: 69%;
     left: 0;
 }
 
