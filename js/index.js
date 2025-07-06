@@ -1,4 +1,7 @@
 console.log("Hare Krishna");
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
