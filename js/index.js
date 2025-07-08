@@ -1,9 +1,9 @@
 console.log("Hare Krishna");
 window.addEventListener('load', () => {
-  window.scrollTo(0, 0); // or gsap.to(window, {scrollTo: 0, duration: 0});
+    window.scrollTo(0, 0); // or gsap.to(window, {scrollTo: 0, duration: 0});
 
-  // Now initialize GSAP Scroll-related stuff
-  ScrollTrigger.refresh();
+    // Now initialize GSAP Scroll-related stuff
+    ScrollTrigger.refresh();
 });
 
 
@@ -200,7 +200,7 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
     })
 
 
-    gsap.from(".one", {
+    gsap.from(".one img", {
         scrollTrigger: {
             trigger: ".section_two",
             scroller: "body",
@@ -209,7 +209,8 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
             end: "top 0%",
         },
         x: 1000,
-        y: -1000,
+        y: -1400,
+        rotate:180,
         ease: "power1.out",
     })
 
@@ -263,21 +264,37 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
     })
 
 
-    gsap.to(".s4_gif video", {
+     let tl4 = gsap.timeline({delay:4})
+    tl4.to(".s4_gif video", {
         scrollTrigger: {
             trigger: ".section_four",
             scroller: "body",
-            scrub: 4,
-            start: "20% 50%",
-            end: "20% 20%",
+            scrub: true,
+            start: "top 30%",
+            end: "top 10%",
             // markers:true,
         },
         width: "50%",
-        height: "60%",
-        left:0,
+        height: "75%",
+        left: 0,
         transformOrigin: "0% 5%",
         objectFit: "cover",
+        ease: "power2.out",
     })
+
+    tl4.to(".side_text p span", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 3,
+            start: "top 5%",
+            end: "top -30%",
+            // markers: true,
+        },
+        transform: "translateY(0%)",
+        stagger: 0.3,
+        ease: "power2.out",
+    });
 
 
 });
@@ -452,21 +469,22 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
     gsap.to(".two", {
         left: "12%"
     })
-    
-    gsap.from(".one", {
+
+    gsap.from(".one img", {
         scrollTrigger: {
             trigger: ".section_two",
             scroller: "body",
-            scrub: 1,
+            scrub: 3,
             start: "top 100%",
             end: "top 0%",
         },
         x: 1000,
-        y: -1000,
+        y: -2000,
+        rotate:180,
         ease: "power1.out",
     })
 
-    
+
     gsap.to(".one", {
         scrollTrigger: {
             trigger: ".section_three",
@@ -514,25 +532,43 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
         left: -1500,
         ease: "power2.out",
     })
-  
-    gsap.to(".s4_gif video", {
+
+    let tl4 = gsap.timeline({delay:4})
+    tl4.to(".s4_gif video", {
         scrollTrigger: {
             trigger: ".section_four",
             scroller: "body",
             scrub: true,
-            start: "20% 50%",
-            end: "20% 20%",
+            start: "top 30%",
+            end: "top 10%",
             // markers:true,
         },
         width: "50%",
         height: "75%",
-        left:0,
+        left: 0,
         transformOrigin: "0% 5%",
         objectFit: "cover",
         ease: "power2.out",
     })
 
-   
+    tl4.to(".side_text p span", {
+        scrollTrigger: {
+            trigger: ".section_four",
+            scroller: "body",
+            scrub: 3,
+            start: "top 5%",
+            end: "top -30%",
+            // markers: true,
+        },
+        transform: "translateY(0%)",
+        stagger: 0.3,
+        ease: "power2.out",
+    });
+
+
+
+
+
 
 
 })
