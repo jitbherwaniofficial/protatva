@@ -7,7 +7,7 @@
   <title>PRO TATVA</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="./img/p.png" type="image/x-icon">
- 
+
 </head>
 
 <body>
@@ -137,13 +137,157 @@
           </h2>
         </section>
         <section class="section section_five">
-           <canvas width="500" height="400" id="barbell-canvas"></canvas>
+          <canvas id="main-canvas"
+            style="position: fixed; top: 62%; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: -1;"></canvas>
+        </section>
+        <section class="section section_six">
         </section>
       </main>
       <!-- MAINS ******************************************************** -->
     </div>
   </div>
 
+  <script type="module">
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.178.0/three.module.min.js';
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 5;
+
+    const canvas = document.querySelector('#main-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    //   renderer.setSize(window.innerWidth, window.innerHeight);
+    //   renderer.setPixelRatio(window.devicePixelRatio);
+    //   document.body.appendChild(renderer.domElement);
+
+    // Bright and realistic lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(3, 5, 5);
+    scene.add(directionalLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 1);
+    fillLight.position.set(-5, -2, 3);
+    scene.add(fillLight);
+
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
+    scene.add(hemiLight);
+
+    const flashingLight1 = new THREE.PointLight(0xff0000, 2, 10);
+    flashingLight1.position.set(-2, 2, 2);
+    scene.add(flashingLight1);
+
+    const flashingLight2 = new THREE.PointLight(0x00ffff, 2, 10);
+    flashingLight2.position.set(2, -2, 2);
+    scene.add(flashingLight2);
+
+    gsap.to(flashingLight1, { intensity: 0.5, duration: 1, repeat: -1, yoyo: true });
+    gsap.to(flashingLight2, { intensity: 0.5, duration: 1.5, repeat: -1, yoyo: true });
+
+    const barMaterial = new THREE.MeshStandardMaterial({
+      color: 0x888888,
+      metalness: 1,
+      roughness: 0.3
+    });
+
+    const barGeometry = new THREE.CylinderGeometry(0.05, 0.05, 5, 32);
+    const barMesh = new THREE.Mesh(barGeometry, barMaterial);
+    barMesh.rotation.z = Math.PI / 2;
+    scene.add(barMesh);
+
+    const plateMaterial = new THREE.MeshStandardMaterial({
+      color: 0xcccccc,
+      metalness: 1,
+      roughness: 0.2
+    });
+
+    function createPlate() {
+      const outerRadius = 0.6;
+      const innerRadius = 0.1;
+      const plateShape = new THREE.Shape();
+      plateShape.absarc(0, 0, outerRadius, 0, Math.PI * 2, false);
+      const hole = new THREE.Path();
+      hole.absarc(0, 0, innerRadius, 0, Math.PI * 2, true);
+      plateShape.holes.push(hole);
+
+      const extrudeSettings = {
+        depth: 0.1,
+        bevelEnabled: false
+      };
+
+      const geometry = new THREE.ExtrudeGeometry(plateShape, extrudeSettings);
+      const mesh = new THREE.Mesh(geometry, plateMaterial);
+      mesh.rotation.y = Math.PI / 2;
+      return mesh;
+    }
+
+    const plates = [];
+    const numPlates = 4;
+    const spacing = 0.15;
+
+    for (let i = 0; i < numPlates; i++) {
+      const leftPlate = createPlate();
+      const rightPlate = createPlate();
+
+      leftPlate.position.set(-3 - i * spacing, 0, 0);
+      rightPlate.position.set(3 + i * spacing, 0, 0);
+
+      scene.add(leftPlate, rightPlate);
+
+      plates.push({
+        mesh: leftPlate,
+        index: i,
+        side: 'left',
+        initialX: leftPlate.position.x,
+        targetX: -1.25 - i * spacing
+      });
+
+      plates.push({
+        mesh: rightPlate,
+        index: i,
+        side: 'right',
+        initialX: rightPlate.position.x,
+        targetX: 1.25 + i * spacing
+      });
+    }
+
+    plates.forEach(({ mesh, initialX, targetX }) => {
+      gsap.fromTo(mesh.position,
+        { x: initialX },
+        {
+          x: targetX,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: ".section_four",
+            start: "top 20%",
+            end: "20% -50%",
+            // start: "top top",
+            // end: "bottom bottom",
+            scrub: 2,
+            // markers:true
+          }
+        }
+      );
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
 
   <!-- SCRIPTS *************************************************** -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>

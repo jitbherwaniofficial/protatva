@@ -210,7 +210,7 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
         },
         x: 1000,
         y: -1400,
-        rotate:180,
+        rotate: 180,
         ease: "power1.out",
     })
 
@@ -264,7 +264,7 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
     })
 
 
-     let tl4 = gsap.timeline({delay:4})
+    let tl4 = gsap.timeline({ delay: 4 })
     tl4.to(".s4_gif video", {
         scrollTrigger: {
             trigger: ".section_four",
@@ -480,7 +480,7 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
         },
         x: 1000,
         y: -2000,
-        rotate:180,
+        rotate: 180,
         ease: "power1.out",
     })
 
@@ -533,7 +533,7 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
         ease: "power2.out",
     })
 
-    let tl4 = gsap.timeline({delay:4})
+    let tl4 = gsap.timeline({ delay: 4 })
     tl4.to(".s4_gif video", {
         scrollTrigger: {
             trigger: ".section_four",
@@ -572,5 +572,3 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
 
 
 })
-
-
