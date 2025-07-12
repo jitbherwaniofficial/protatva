@@ -139,6 +139,9 @@
         <section class="section section_five">
           <canvas id="main-canvas"
             style="position: fixed; top: 62%; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: -1;"></canvas>
+            <h3 class="section_five_h3">
+              Fuel Your Body Naturally
+            </h3>
         </section>
         <section class="section section_six">
         </section>
@@ -151,7 +154,9 @@
     import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.178.0/three.module.min.js';
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
+    // scene.background = new THREE.Color("#141414");
+
+    const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 700);
     camera.position.z = 5;
 
     const canvas = document.querySelector('#main-canvas');
@@ -293,6 +298,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
   <script src="js/index.js"></script>
   <!-- SCRIPTS *************************************************** -->
 </body>

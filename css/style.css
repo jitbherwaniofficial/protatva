@@ -305,12 +305,13 @@ body {
 }
 
 
-/* canvas {
-      display: block;
-      position: fixed;
-      top: 80%;
-      left: 0;
-      background-color: var(--background-color);
-    } */
+.section_five_h3 {
+    text-transform: uppercase;
+    font-size: 10vw;
+    padding-top: 30vw;
+    width: 100%;
+    text-align: center;
+    /* color: cyan; */
+}
 
 /* MAIN ******************************************** */

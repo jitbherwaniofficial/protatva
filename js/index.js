@@ -296,6 +296,32 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
         ease: "power2.out",
     });
 
+    // split Text
+    let split = SplitText.create('.section_five .section_five_h3', {
+        type: 'chars, words, lines',
+        mask: 'lines'
+    })
+
+    gsap.from(split.chars, {
+        scrollTrigger: {
+            trigger: ".section_five",
+            scroller: "body",
+            scrub: 3,
+            start: "top 60%",
+            end: "top 10%",
+            // markers: true,
+        },
+        yPercent: () => gsap.utils.random(-100, 100),
+        rotation: () => gsap.utils.random(-30, 30),
+        autoAlpha: 0,
+        ease: 'back.out(1.5)',
+        stagger: {
+            amount: 0.5,
+            from: 'random'
+        },
+        duration: 1.5
+    })
+
 
 });
 
@@ -566,7 +592,31 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
     });
 
 
+    // split Text
+    let split = SplitText.create('.section_five .section_five_h3', {
+        type: 'chars, words, lines',
+        mask: 'lines'
+    })
 
+    gsap.from(split.chars, {
+        scrollTrigger: {
+            trigger: ".section_five",
+            scroller: "body",
+            scrub: 3,
+            start: "top 60%",
+            end: "top 10%",
+            // markers: true,
+        },
+        yPercent: () => gsap.utils.random(-100, 100),
+        rotation: () => gsap.utils.random(-30, 30),
+        autoAlpha: 0,
+        ease: 'back.out(1.5)',
+        stagger: {
+            amount: 0.5,
+            from: 'random'
+        },
+        duration: 1.5
+    })
 
 
 
