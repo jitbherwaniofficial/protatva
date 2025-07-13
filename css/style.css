@@ -308,10 +308,125 @@ body {
 .section_five_h3 {
     text-transform: uppercase;
     font-size: 10vw;
-    padding-top: 30vw;
+    padding-top: 23.9vw;
     width: 100%;
     text-align: center;
     /* color: cyan; */
+}
+
+.section_six {
+    /* border: 1px solid cyan; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+    position: relative;
+    height: 150vh !important;
+}
+
+.section_six_h4 {
+    font-size: 8vw;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    /* border: 2px solid var(--color); */
+    padding: 0 2vw;
+    transition: all 0.6s;
+    cursor: default;
+}
+
+.section_six_h4:nth-child(1) {  
+    align-self: flex-start;
+}
+
+
+
+.section_six_h4:nth-child(2) {   
+    align-self: flex-end;
+}
+
+.section_six_h4:nth-child(3) {  
+    align-self: flex-start;
+}
+
+.section_six_h4:nth-child(4) {  
+    align-self: flex-end;
+}
+
+.section_six_h4 video {
+  position: absolute;
+  pointer-events: none;
+  z-index: 50;
+  width: 30vw;
+  height: 20vw;
+  opacity: 0;
+  transition: opacity 0.5s ease;  /* Smooth fade */
+  left: 0;
+  top: 0;
+  border-radius: 1rem !important;
+}
+
+
+
+/* .section_six_h4:nth-child(1) video {
+    position: absolute;
+    right: 0;
+    z-index: 50;
+    width: 30vw;
+    height: 20vw;
+    top: -50%;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.section_six_h4:nth-child(2) video {
+    position: absolute;
+    left: 0;
+    z-index: 50;
+    width: 30vw;
+    height: 20vw;
+    top: -50%;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.section_six_h4:nth-child(3) video {
+    position: absolute;
+    right: 0;
+    z-index: 50;
+    width: 30vw;
+    height: 20vw;
+    top: -50%;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.section_six_h4:nth-child(4) video {
+    position: absolute;
+    left: 0;
+    z-index: 50;
+    width: 30vw;
+    height: 20vw;
+    top: -50%;
+    opacity: 0;
+    transition: all 0.6s;
+} */
+
+.section_six_h4:nth-child(1):hover video {
+    opacity: 1;
+}
+
+.section_six_h4:nth-child(2):hover video {
+    opacity: 1;
+}
+
+.section_six_h4:nth-child(3):hover video {
+    opacity: 1;
+}
+
+.section_six_h4:nth-child(4):hover video {
+    opacity: 1;
 }
 
 /* MAIN ******************************************** */
