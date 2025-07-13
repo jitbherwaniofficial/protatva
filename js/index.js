@@ -624,25 +624,28 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
 
 const h4Elements = document.querySelectorAll(".section_six_h4");
 
-  h4Elements.forEach((h4) => {
+h4Elements.forEach((h4) => {
     const video = h4.querySelector("video");
 
     h4.addEventListener("mousemove", (e) => {
-      const rect = h4.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+        const rect = h4.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-      // Move the video to follow cursor
-      video.style.left = `${x}px`;
-      video.style.top = `${y}px`;
+        // Move the video to follow cursor
+          video.style.left = `${x}px`;
+          video.style.top = `${y}px`;
+        // video.style.left = `${x - video.offsetWidth / 2}px`;
+        // video.style.top = `${y - video.offsetHeight / 2}px`;
+
     });
 
     h4.addEventListener("mouseenter", () => {
-      video.style.opacity = "1";
+        video.style.opacity = "1";
     });
 
     h4.addEventListener("mouseleave", () => {
-      video.style.opacity = "0";
+        video.style.opacity = "0";
     });
-  });
+});
 
