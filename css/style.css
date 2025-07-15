@@ -326,32 +326,34 @@ body {
 }
 
 .section_six_h4 {
-    font-size: 8vw;
+    font-size: 7.5vw;
     text-transform: uppercase;
     white-space: nowrap;
     position: relative;
     /* border: 2px solid var(--color); */
     padding: 0 2vw;
-    transition: all 0.6s;
+    transition: all 0.9s;
     cursor: default;
 }
 
 .section_six_h4:nth-child(1) {  
     align-self: flex-start;
+    /* transform-origin: left; */
 }
-
-
 
 .section_six_h4:nth-child(2) {   
     align-self: flex-end;
+    /* transform-origin: right; */
 }
 
 .section_six_h4:nth-child(3) {  
     align-self: flex-start;
+    /* transform-origin: left; */
 }
 
 .section_six_h4:nth-child(4) {  
     align-self: flex-end;
+    /* transform-origin: right; */
 }
 
 .section_six_h4 video {
@@ -359,29 +361,109 @@ body {
   pointer-events: none;
   z-index: 50;
   width: 30vw;
-  height: 20vw;
+  height: 18vw;
   opacity: 0;
-  transition: opacity 0.5s ease;  /* Smooth fade */
+  transition: opacity 0.5s ease;
   left: 0;
   top: 0;
-  border-radius: 1rem !important;
+  /* border-radius: 1rem; */
+  /* border: 2px solid white; */
+  object-fit: cover;
 }
 
 
 .section_six_h4:nth-child(1):hover {
     color: cyan;
+    scale: 1.08;
+    z-index: 10;
 }
 
 .section_six_h4:nth-child(2):hover {
     color: cyan;
+    scale: 1.08;
+    z-index: 10;
 }
 
 .section_six_h4:nth-child(3):hover {
     color: cyan;
+    scale: 1.08;
+    z-index: 10;
 }
 
 .section_six_h4:nth-child(4):hover {
     color: cyan;
+    scale: 1.08;
+    z-index: 10;
 }
 
+.section_seven {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section_seven_h5 {
+  font-size: 10vw;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.steps_wrapper {
+  display: flex;
+  width: max-content;
+  gap: 5vw;
+  padding: 2rem;
+  will-change: transform;
+}
+
+.step {
+  flex: 0 0 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.step video {
+  width: 50vw;
+  /* border: 2px solid cyan; */
+}
+
+
+
+
+
 /* MAIN ******************************************** */
+
+/* FOOTER ******************************************** */
+footer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+footer .jar {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 30%;
+    left: 21%;
+}
+
+.footer_logo {
+    position: absolute;
+    width: 100%;
+    height: 25vw;
+    right: 0;
+    bottom: 0;
+}
+
+.footer_logo img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: -20%;
+    right: 0;
+}
+/* FOOTER ******************************************** */
