@@ -322,6 +322,71 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
         duration: 1.5
     })
 
+    gsap.from(".section_six_h4:nth-child(1)", {
+        scrollTrigger: {
+            trigger: ".section_six",
+            scroller: "body",
+            scrub: true,
+            start: "top 100%",
+            end: "top 80%",
+            // markers: true,
+        },
+        x: -2000,
+        ease: "power2.out",
+    });
+    gsap.from(".section_six_h4:nth-child(2)", {
+        scrollTrigger: {
+            trigger: ".section_six",
+            scroller: "body",
+            scrub: true,
+            start: "top 85%",
+            end: "top 65%",
+            // markers: true,
+        },
+        x: 2500,
+        ease: "power2.out",
+    });
+    gsap.from(".section_six_h4:nth-child(3)", {
+        scrollTrigger: {
+            trigger: ".section_six",
+            scroller: "body",
+            scrub: true,
+            start: "top 70%",
+            end: "top 55%",
+            // markers: true,
+        },
+        x: -2500,
+        ease: "power2.out",
+    });
+    gsap.from(".section_six_h4:nth-child(4)", {
+        scrollTrigger: {
+            trigger: ".section_six",
+            scroller: "body",
+            scrub: true,
+            start: "top 55%",
+            end: "top 40%",
+            // markers: true,
+        },
+        x: 2500,
+        ease: "power2.out",
+    });
+
+    const wrapper = document.querySelector(".steps_wrapper");
+    const steps = document.querySelectorAll(".step");
+
+    gsap.to(wrapper, {
+        x: () => `-${(steps.length - 1) * 40}vw`,  // scroll through all items
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".section_seven",
+            start: "top 60%",
+            end: () => `+=${steps.length * 100}vw`,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            // markers: true
+        }
+    });
 
 });
 

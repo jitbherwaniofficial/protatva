@@ -304,11 +304,20 @@ body {
     position: relative;
 }
 
-
-.section_five_h3 {
+@media only screen and (max-width: 1366px) {
+    .section_five_h3 {
     text-transform: uppercase;
     font-size: 10vw;
     padding-top: 25vw;
+    width: 100%;
+    text-align: center;
+    /* color: cyan; */
+}
+}
+.section_five_h3 {
+    text-transform: uppercase;
+    font-size: 10vw;
+    padding-top: 35vw;
     width: 100%;
     text-align: center;
     /* color: cyan; */
@@ -427,10 +436,22 @@ body {
 .step video {
   width: 50vw;
   /* border: 2px solid cyan; */
+  transition: all 0.3s linear;
 }
 
+.step video:hover {
+    scale:1.3;
+}
 
+#main-canvas {
+    position: fixed; top: 42.5%; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: -1;
+}
 
+@media only screen and (max-width: 1366px) {
+#main-canvas {
+    position: fixed; top: 41%; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: -1;
+}
+}
 
 
 /* MAIN ******************************************** */
