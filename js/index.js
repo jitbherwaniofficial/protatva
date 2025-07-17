@@ -375,7 +375,7 @@ mm.add("(min-width: 1367px) and (max-width: 1920px)", () => {
     const steps = document.querySelectorAll(".step");
 
     gsap.to(wrapper, {
-        x: () => `-${(steps.length - 1) * 40}vw`,  // scroll through all items
+        x: () => `-${(steps.length - 1) * 43.5}vw`,  // scroll through all items
         ease: "none",
         scrollTrigger: {
             trigger: ".section_seven",
@@ -735,7 +735,7 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
     const steps = document.querySelectorAll(".step");
 
     gsap.to(wrapper, {
-        x: () => `-${(steps.length - 1) * 40}vw`,  // scroll through all items
+        x: () => `-${(steps.length - 1) * 43.5}vw`,  // scroll through all items
         ease: "none",
         scrollTrigger: {
             trigger: ".section_seven",
@@ -747,6 +747,45 @@ mm.add("(min-width: 1281px) and (max-width: 1366px)", () => {
             // markers: true
         }
     });
+
+     gsap.to(".jar", {
+        scrollTrigger: {
+            trigger: "footer",
+            scroller: "body",
+            scrub: 2,
+            start: "top 100%",
+            end: "top 100%",
+            // markers: true,
+        },
+        rotate: -30,
+        ease: "power2.out",
+    });
+
+    gsap.from(".footer_logo svg g g path, .footer_logo svg g .cls-3", {
+         scrollTrigger: {
+            trigger: "footer",
+            scroller: "body",
+            scrub: 2,
+            start: "top 80%",
+            end: "top 60%",
+        },
+        y: 500,
+        ease: "power4.out",
+        stagger:0.3,
+    })
+
+    gsap.from(".footer_logo svg #circle circle", {
+         scrollTrigger: {
+            trigger: "footer",
+            scroller: "body",
+            scrub: 2,
+            start: "top 80%",
+            end: "top 60%",
+        },
+        x:1500,
+        ease: "power4.out",
+        stagger:0.3,
+    })
 
 })
 

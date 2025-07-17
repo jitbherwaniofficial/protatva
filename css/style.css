@@ -304,16 +304,6 @@ body {
     position: relative;
 }
 
-@media only screen and (max-width: 1366px) {
-    .section_five_h3 {
-    text-transform: uppercase;
-    font-size: 10vw;
-    padding-top: 25vw;
-    width: 100%;
-    text-align: center;
-    /* color: cyan; */
-}
-}
 .section_five_h3 {
     text-transform: uppercase;
     font-size: 10vw;
@@ -423,6 +413,7 @@ body {
   gap: 5vw;
   padding: 2rem;
   will-change: transform;
+  
 }
 
 .step {
@@ -431,17 +422,22 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: translateX(10%);
+  position: relative;
+  transition: all 0.3s linear;
 }
 
 .step video {
   width: 50vw;
-  /* border: 2px solid cyan; */
   transition: all 0.3s linear;
 }
 
-.step video:hover {
+.step:hover {
     scale:1.3;
+    z-index: 200;
 }
+
+
 
 #main-canvas {
     position: fixed; top: 42.5%; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: -1;
@@ -450,6 +446,19 @@ body {
 @media only screen and (max-width: 1366px) {
 #main-canvas {
     position: fixed; top: 41%; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: -1;
+}
+
+}
+
+
+@media only screen and (max-width: 1366px) {
+    .section_five_h3 {
+    text-transform: uppercase;
+    font-size: 10vw;
+    padding-top: 25vw;
+    width: 100%;
+    text-align: center;
+    /* color: cyan; */
 }
 }
 
@@ -461,6 +470,10 @@ footer {
     width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
 }
 
 footer .jar {
@@ -468,23 +481,31 @@ footer .jar {
     height: 60%;
     object-fit: cover;
     position: absolute;
-    bottom: 30%;
+    bottom: 36%;
     left: 21%;
 }
 
 .footer_logo {
-    position: absolute;
-    width: 100%;
+    /* position: absolute; */
+    width: 100vw;
     height: 25vw;
-    right: 0;
-    bottom: 0;
+    /* right: 0;
+    bottom: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer_logo img {
+.footer_logo svg {
     width: 100%;
+    height: 25vw;
     object-fit: cover;
-    position: absolute;
-    bottom: -20%;
-    right: 0;
+    overflow: visible;
+    position: relative;
+    bottom: -5%;
+}
+
+.end {
+    height: 20vh;
 }
 /* FOOTER ******************************************** */
