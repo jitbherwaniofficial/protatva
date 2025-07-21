@@ -12,7 +12,7 @@
 
 <body>
 
-  <!-- PROTATVA LOGO ********************************************** -->
+  <!-- PROTATVA LOGO PRELOADER ********************************************** -->
 
   <figure class="logo">
     <svg id="Layer_1" viewBox="0 0 687.89 147.6">
@@ -85,12 +85,14 @@
     </svg>
   </figure>
 
-  <!-- PROTATVA LOGO ********************************************** -->
+  <!-- PROTATVA LOGO PRELOADER ********************************************** -->
 
   <div id="smooth-wrapper">
+
     <div id="smooth-content">
       <!-- MAINS ******************************************************** -->
       <main id="main">
+
         <section class="section section_one">
           <h1 class="main_title">
             <span>PROTEIN</span>
@@ -163,7 +165,6 @@
         <section class="section_seven">
           <h5 class="section_seven_h5">HOW IT WORKS.</h5>
           <div class="steps_wrapper">
-
             <div class="step"><video src="./img/scoop.webm" loop autoplay muted></video></div>
             <div class="step"><video src="./img/shake.webm" loop autoplay muted></video></div>
             <div class="step"><video src="./img/drink.webm" loop autoplay muted></video></div>
@@ -172,6 +173,8 @@
         </section>
 
       </main>
+      <!-- MAINS ******************************************************** -->
+
       <footer>
         <img class="jar" src="./img/main_image.png" alt="">
         <figure class="footer_logo">
@@ -245,9 +248,33 @@
           </svg>
         </figure>
       </footer>
-      <!-- MAINS ******************************************************** -->
+
     </div>
+
   </div>
+
+  <script>
+
+    document.onkeydown = function (e) {
+      if (e.keyCode == 123) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+      }
+
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+      }
+    }
+
+  </script>
 
   <script type="module">
     import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.178.0/three.module.min.js';
@@ -398,7 +425,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
   <script src="js/index.js"></script>
   <!-- SCRIPTS *************************************************** -->
 </body>
